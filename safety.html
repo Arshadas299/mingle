@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety & Trust - Mingl</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Mingl" style="height: 40px; display: block;"></a>
+            <nav class="nav-center nav-links">
+                <a href="index.html">Home</a>
+                <a href="star.html" class="nav-star-link">Become a Mingle Star</a>
+                <a href="safety.html" style="font-weight: 700; color: #1a1a1a; opacity: 1;">Safety</a>
+                <a href="support.html">Support</a>
+            </nav>
+            <div class="nav-right">
+                <button class="btn btn-icon" style="border-radius: 100px; padding: 0 16px;"><ion-icon name="globe-outline" style="font-size: 1.2rem;"></ion-icon> <ion-icon name="chevron-down-outline" style="font-size: 0.8em; margin-left: 4px;"></ion-icon></button>
+                <button class="btn btn-dark" style="border-radius: 100px;" onclick="openLogin()">Sign In</button>
+            </div>
+            <button class="mobile-menu-btn btn btn-outline" style="display: none;" onclick="openLogin()">Login</button>
+        </div>
+    </header>
+
+    <div class="page-header" style="background: var(--text-dark);">
+        <div class="container">
+            <h1 class="page-title">Safety is Our Priority</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; color: #fdfdfd;">
+                We enforce strict guidelines and use modern safeguards to ensure your conversations remain a pleasant and judgment-free experience.
+            </p>
+        </div>
+    </div>
+
+    <div class="container page-content">
+        
+        <section style="margin-bottom: 60px;">
+            <div class="trust-list" style="max-width: 100%;">
+                
+                <div class="trust-item" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); padding: 30px;">
+                    <div class="trust-icon" style="background: rgba(108, 92, 231, 0.1); color: var(--primary-purple); width: 64px; height: 64px;"><ion-icon name="id-card-outline" style="font-size: 2rem;"></ion-icon></div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Profile Verification</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Before a user is highlighted on the platform or upgraded to a Mingle Star, their identity must pass our internal review process. This involves phone number verification and a quick selfie check to keep bots strictly out of Mingl.</p>
+                    </div>
+                </div>
+
+                <div class="trust-item" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); padding: 30px;">
+                    <div class="trust-icon" style="background: rgba(253, 121, 168, 0.1); color: var(--primary-pink); width: 64px; height: 64px;"><ion-icon name="alert-circle-outline" style="font-size: 2rem;"></ion-icon></div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">1-Click Reporting & Blocking</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">If you ever feel uncomfortable, our robust reporting system is available right on the chat screen. You can block or report a user instantly. Our 24/7 moderation team investigates all reports thoroughly and takes immediate action.</p>
+                    </div>
+                </div>
+
+                <div class="trust-item" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); padding: 30px;">
+                    <div class="trust-icon" style="background: rgba(39, 174, 96, 0.1); color: #27ae60; width: 64px; height: 64px;"><ion-icon name="lock-closed-outline" style="font-size: 2rem;"></ion-icon></div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Privacy Protection</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Your real phone number and personal details are completely hidden from other users. You only share what you put on your public profile. Voice and text chats are routed through our secure servers directly.</p>
+                    </div>
+                </div>
+
+                <div class="trust-item" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); padding: 30px;">
+                    <div class="trust-icon" style="background: rgba(241, 196, 15, 0.1); color: #f39c12; width: 64px; height: 64px;"><ion-icon name="book-outline" style="font-size: 2rem;"></ion-icon></div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Community Guidelines</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Be kind. No harassment, bullying, hate speech, or explicit content. Mingle is a place to learn, connect, and enjoy engaging conversation. Violating these rules results in a permanent ban.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="padding-top: 0; border: none;">
+                <p>&copy; 2026 Mingl App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="login-modal">
+            <button class="close-modal" onclick="closeLogin()"><ion-icon name="close-outline"></ion-icon></button>
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Enter your mobile number to get a login OTP.</p>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('OTP Sent!');">
+                <div class="input-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" style="font-size: 1.1rem; padding: 14px;">Send OTP</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openLogin() {
+            document.getElementById('loginModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLogin() {
+            document.getElementById('loginModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLogin();
+            }
+        });
+    </script>
+</body>
+</html>
