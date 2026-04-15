@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Mingl</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Mingl" style="height: 40px; display: block;"></a>
+            <nav class="nav-center nav-links">
+                <a href="index.html">Home</a>
+                <a href="star.html" class="nav-star-link">Become a Mingle Star</a>
+                <a href="safety.html">Safety</a>
+                <a href="support.html" style="font-weight: 700; color: #1a1a1a; opacity: 1;">Support</a>
+            </nav>
+            <div class="nav-right">
+                <button class="btn btn-icon" style="border-radius: 100px; padding: 0 16px;"><ion-icon name="globe-outline" style="font-size: 1.2rem;"></ion-icon> <ion-icon name="chevron-down-outline" style="font-size: 0.8em; margin-left: 4px;"></ion-icon></button>
+                <button class="btn btn-dark" style="border-radius: 100px;" onclick="openLogin()">Sign In</button>
+            </div>
+            <button class="mobile-menu-btn btn btn-outline" style="display: none;" onclick="openLogin()">Login</button>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 140px; margin-bottom: 60px;">
+        <div class="support-hero-card">
+            <h1 style="font-size: 3.5rem; font-weight: 800; color: white; margin-bottom: 12px; letter-spacing: -0.02em;">How can we help?</h1>
+            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 40px;">Find what you're looking for to help you connect with others.</p>
+            
+            <div class="support-contact-form">
+                <form onsubmit="event.preventDefault(); alert('Message sent!');">
+                    <div class="input-row" style="display: flex; gap: 16px; margin-bottom: 16px;">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <textarea placeholder="How can we help you today?" required></textarea>
+                    <button type="submit" class="btn btn-dark" style="margin-top: 16px; padding: 14px 40px; font-size: 1.1rem; width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container page-content" style="padding-top: 0;">
+        
+        <section style="margin-bottom: 60px;">
+            <div class="trust-list" style="max-width: 100%;">
+                
+                <div class="trust-item" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); padding: 30px;">
+                    <div class="trust-icon" style="background: rgba(108, 92, 231, 0.1); color: var(--primary-purple); width: 64px; height: 64px;"><ion-icon name="mail-outline" style="font-size: 2rem;"></ion-icon></div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Contact Support</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Email us at support@mingl.com. We typically respond within 2-4 hours to all inquiries.</p>
+                    </div>
+                </div>
+
+                <div class="trust-item" style="box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); padding: 30px;">
+                    <div class="trust-icon" style="background: rgba(253, 121, 168, 0.1); color: var(--primary-pink); width: 64px; height: 64px;"><ion-icon name="document-text-outline" style="font-size: 2rem;"></ion-icon></div>
+                    <div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">FAQs</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Check out our comprehensive knowledge base for quick solutions to billing, matching, and account settings.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="padding-top: 0; border: none;">
+                <p>&copy; 2026 Mingl App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="login-modal">
+            <button class="close-modal" onclick="closeLogin()"><ion-icon name="close-outline"></ion-icon></button>
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Enter your mobile number to get a login OTP.</p>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('OTP Sent!');">
+                <div class="input-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" style="font-size: 1.1rem; padding: 14px;">Send OTP</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openLogin() {
+            document.getElementById('loginModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLogin() {
+            document.getElementById('loginModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLogin();
+            }
+        });
+    </script>
+</body>
+</html>
